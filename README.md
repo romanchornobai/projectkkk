@@ -1,22 +1,25 @@
-# Servidor GET con PowerShell y Node.js
+# Project KKK - GitHub Pages Static GET API
 
-Servidor HTTP nativo (sin dependencias externas) creado en [server.js](file:///c:/Users/Roman/Desktop/page%20kk/server.js).
+Página estática configurada para **GitHub Pages**. Al hacer un GET a la URL de GitHub Pages, devuelve directamente el JSON con el `id` y el `command` PowerShell.
 
-### Cómo ejecutarlo
-```powershell
-node server.js
-```
+### URLs en GitHub Pages:
+Una vez activado GitHub Pages en el repositorio:
+- Raíz: `https://romanchornobai.github.io/projectkkk/`
+- O directo al JSON: `https://romanchornobai.github.io/projectkkk/index.json`
 
-### Probarlo
-Al hacer cualquier petición `GET` a `http://localhost:3000`:
-```powershell
-curl http://localhost:3000
-```
-
-Devuelve:
+### Respuesta:
 ```json
 {
   "id": 1,
   "command": "Get-Process | Select-Object -First 5"
 }
+```
+
+### Probar en PowerShell:
+```powershell
+Invoke-RestMethod -Uri "https://romanchornobai.github.io/projectkkk/"
+```
+o
+```powershell
+(Invoke-WebRequest -Uri "https://romanchornobai.github.io/projectkkk/").Content
 ```
